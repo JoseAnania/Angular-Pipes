@@ -1,0 +1,204 @@
+<!-- HTML de inicio -->
+
+<h1 class="mt-3">Pipes <small>Angular</small></h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th> Variable </th>
+          <th> Pipe </th>
+          <th> Salida </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ nombre }} </td>
+          <td> uppercase </td>
+          <!-- usamos el PIPE -->
+          <td> {{ nombre | uppercase }} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ nombre }} </td>
+          <td> lowercase </td>
+          <!-- usamos el PIPE -->
+          <td> {{ nombre | lowercase }} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ nombre }} </td>
+          <td> slice:3 </td>
+          <!-- usamos el PIPE -->
+          <td> {{ nombre | slice:3 }} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ nombre }} </td>
+          <td> slice:0:3 </td>
+          <!-- usamos el PIPE -->
+          <td> {{ nombre | slice:0:3 }} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ arreglo }} </td>
+          <td> slice:1:5 </td>
+          <!-- usamos el PIPE -->
+          <td> {{ arreglo | slice:1:5 }} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ PI }} </td>
+          <td> number: '.0-2' </td>
+          <!-- usamos el PIPE -->
+          <td> {{ PI | number: '.0-2' }} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ porcentaje }} </td>
+          <td> percent </td>
+          <!-- usamos el PIPE -->
+          <td> {{ porcentaje | percent }} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ porcentaje }} </td>
+          <td> percent:'2.2-2' </td>
+          <!-- usamos el PIPE -->
+          <td> {{ porcentaje | percent:'2.2-2' }} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ salario }} </td>
+          <td> currency </td>
+          <!-- usamos el PIPE -->
+          <td> {{ salario | currency }} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ salario }} </td>
+          <td> currency: 'EUR' </td>
+          <!-- usamos el PIPE -->
+          <td> {{ salario | currency: 'EUR' }} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ salario }} </td>
+          <td> currency: 'CAD': 'symbol-narrow': '.0-0' </td>
+          <!-- usamos el PIPE -->
+          <td> {{ salario | currency: 'CAD': 'symbol-narrow': '.0-0' }} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ valorPromesa }} </td>
+          <td> async </td>
+          <!-- usamos el PIPE -->
+          <td> {{ valorPromesa | async}} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ fecha }} </td>
+          <td> date </td>
+          <!-- usamos el PIPE -->
+          <td> {{ fecha | date}} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ fecha }} </td>
+          <td> date: 'medium' </td>
+          <!-- usamos el PIPE -->
+          <td> {{ fecha | date: 'medium'}} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ fecha }} </td>
+          <td> date: 'short' </td>
+          <!-- usamos el PIPE -->
+          <td> {{ fecha | date: 'short'}} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ fecha }} </td>
+          <td> date: 'MMMM - dd' </td>
+          <!-- usamos el PIPE -->
+          <td> {{ fecha | date: 'MMMM - dd'}} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ nombre2 }} </td>
+          <td> capitalizado: false </td>
+          <!-- usamos el PIPE -->
+          <td> {{ nombre2 | capitalizado: false}} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ nombre2 }} </td>
+          <td> capitalizado: true </td>
+          <!-- usamos el PIPE -->
+          <td> {{ nombre2 | capitalizado: true}} </td>
+        </tr>
+
+        <tr>
+          <!-- usamos interpolación para llamar las variables desde el APP.COMPONENT:TS -->
+          <td> {{ nombre }} </td>
+          <td> 
+            contrasena: {{ activar }}
+             <br>
+             <button (click)="activar = !activar " class="btn btn-outline-primary">
+               Activar/Desactivar
+             </button>
+          </td>
+          <!-- usamos el PIPE -->
+          <td> {{ nombre | contrasena: activar}} </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>JSON </h3>
+<hr>
+<div class="row mb-5">
+  <div class="col">
+    <pre>
+      {{ cantante | json}}
+    </pre>
+  </div>
+</div>
+
+<h3 class="mt-4">DomSeguro</h3>
+<hr>
+<div class="row mb-5">
+  <div class="col">
+
+    <!-- Pegamos el enlace (en este caso un video de YouTube) -->
+    <iframe width="560" 
+            height="315" 
+            [src]="videoUrl | domseguro"
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+
+  </div>
+</div>
